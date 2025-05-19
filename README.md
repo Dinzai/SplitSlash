@@ -1,0 +1,1 @@
+The Level and Util files contain an example template that can be used for SFML c++, showing how you can generate a grid based level using the string spliter and a .txt file containing 1's, commas, and 0's.
