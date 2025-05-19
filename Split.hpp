@@ -1,49 +1,52 @@
 /*
 
-MIT Licence 
+MIT Licence
 Author -> Brett Rogers
 Reference -> https://www.youtube.com/watch?v=jwNRV9Al83Y&t=225s
 
 
-String Splitting Utility 
+String Splitting Utility
 
-Map building Use case(psudo code, that code not included) -> 
+Map building Use case(psudo code, that code not included) ->
 
 split a txt file that has 0's, 1's and commas
 remove the commas, keep the 0's and 1's
-1's = wall/floor 
+1's = wall/floor
 0's = empty
 
 How to Use?
 
 Run Do(file.txt, ',');     <------ run this function, split by the ignore character
 
-if data needs to be type int run 
+if data needs to be type int run
 
 std::vector<int> numList = ConvertToInt(goal);
 
 
 */
 
-
+#pragma once
 #include <fstream>
 #include <vector>
 #include <string>
 #include <iostream>
 
-namespace Dinzai 
+namespace Dinzai
 {
 
-	struct HelperFunctions 
+	struct HelperFunctions
 	{
 
 
-		HelperFunctions() 
-		{}
-	
-		~HelperFunctions() 
-		{}
-	
+		HelperFunctions()
+		{
+		}
+
+		~HelperFunctions()
+		{
+		}
+
+	private:
 		std::vector<std::string> AddData(std::string fileLocation)
 		{
 			std::vector<std::string> data;
@@ -60,7 +63,7 @@ namespace Dinzai
 				}
 				in.close();
 			}
-			else 
+			else
 			{
 				std::cout << "failed";
 			}
@@ -102,6 +105,7 @@ namespace Dinzai
 
 		}
 
+	public:
 
 		std::vector<int> ConverToInt(std::vector<std::string> stringArray)
 		{
@@ -126,10 +130,10 @@ namespace Dinzai
 			{
 				std::string chunk = in.at(i);
 				out = Split(chunk, splitChar);
-				
-				for (int j = 0; j < out.size(); j++) 
+
+				for (int j = 0; j < out.size(); j++)
 				{
-					
+
 					goal.push_back(out.at(j));
 				}
 
